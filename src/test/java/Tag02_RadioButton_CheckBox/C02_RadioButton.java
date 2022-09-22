@@ -67,6 +67,11 @@ public class C02_RadioButton {
             .sendKeys(Keys.ENTER)
 
             .perform();
+    System.out.println(driver.getCurrentUrl());
+    System.out.println(driver.getPageSource());
+    System.out.println();
+    System.out.println(driver.getWindowHandle());
+    System.out.println(driver.getWindowHandles());
 
 
     }
