@@ -27,7 +27,7 @@ public class C01_AmazonSearchTest {
     @AfterClass
     public static void tearDown(){
 
-        driver.close();
+      //  driver.close();
     }
     /*
     1. Bir class oluşturun :
@@ -54,11 +54,12 @@ d. Sonra karşınıza çıkan ilk sonucun resmine tıklayın.
     System.out.println("Amazon'da görüntülenen ilgili sonuçların sayısı= "+sonucarr[2]);
 
     WebElement ilkImage=driver.findElement(By.xpath("(//img[@class=\"s-image\"])[1]"));
-    WebElement ilkYazisi= driver.findElement(with(By.tagName("a")).toRightOf(ilkImage));
-
-   ilkYazisi.click();
+    WebElement ikinciImage= driver.findElement(with(By.tagName("img")).below(ilkImage));
+    WebElement ucuncuImage= driver.findElement(with(By.className("s-image")).below(ikinciImage));
+    Thread.sleep(5000);
+   ucuncuImage.click();
    Thread.sleep(5000);
-    System.out.println(ilkYazisi.getText());
+// sadece with diyip elemente ait bir degerin simini girip sonraki locatorlara göre konumunu yaziyoruz
 
 
 
