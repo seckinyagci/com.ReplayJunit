@@ -13,6 +13,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.time.Duration;
 import java.util.Arrays;
 
+import static org.openqa.selenium.support.locators.RelativeLocator.with;
+
 public class C01_AmazonSearchTest {
     static WebDriver driver;
     @BeforeClass
@@ -24,6 +26,7 @@ public class C01_AmazonSearchTest {
     }
     @AfterClass
     public static void tearDown(){
+
         driver.close();
     }
     /*
@@ -36,7 +39,7 @@ d. Sonra karşınıza çıkan ilk sonucun resmine tıklayın.
      */
 
 @Test
-    public void test01(){
+    public void test01() throws InterruptedException {
     //a.web sayfasına gidin. https://www.amazon.com/
     driver.get("https://www.amazon.com");
     //b. Search(ara) “city bike”
@@ -50,7 +53,13 @@ d. Sonra karşınıza çıkan ilk sonucun resmine tıklayın.
 
     System.out.println("Amazon'da görüntülenen ilgili sonuçların sayısı= "+sonucarr[2]);
 
-    driver.findElement(By.xpath("(//img[@class=\"s-image\"])[1]")).click();
+    WebElement ilkImage=driver.findElement(By.xpath("(//img[@class=\"s-image\"])[1]"));
+    WebElement ilkYazisi= driver.findElement(with(By.tagName("a")).toRightOf(ilkImage));
+
+   ilkYazisi.click();
+   Thread.sleep(5000);
+    System.out.println(ilkYazisi.getText());
+
 
 
 
