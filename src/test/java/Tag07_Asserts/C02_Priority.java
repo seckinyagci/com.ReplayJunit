@@ -5,14 +5,16 @@ import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 
 import java.time.Duration;
 
-public class C02_YoutubeAssertions {
+import static org.openqa.selenium.support.locators.RelativeLocator.with;
+
+public class C02_Priority {
+    //bu konu testng'ye ait
     static WebDriver driver;
 
     @BeforeClass
@@ -24,7 +26,7 @@ public class C02_YoutubeAssertions {
     }
     @AfterClass
     public static void tearDown(){
-        driver.close();
+     //   driver.close();
     }
     //1) Bir class oluşturun: YoutubeAssertions
     //2) https://www.youtube.com adresine gidin
@@ -42,10 +44,26 @@ public class C02_YoutubeAssertions {
     //○ imageTest => YouTube resminin görüntülendiğini (isDisplayed()) test edin
     @Test
     public void test03(){
+       driver.switchTo().alert().accept();
+       Actions action=new Actions(driver);
+       action.sendKeys(Keys.END).perform();
+
+
+       driver.findElement(By.xpath("//*[@id=\"content\"]/div[2]/div[6]/div[1]/ytd-button-renderer[2]/yt-button-shape/button/yt-touch-feedback-shape/div/div[2]")).click();
         WebElement menuButton= driver.
                 findElement(By.xpath("/html/body/ytd-app/div[1]/div/ytd-masthead/div[3]/div[1]/yt-icon-button[2]/button/yt-icon"));
-WebElement
-        Assert.assertTrue(actuelData.contains(expectedData));}
+WebElement logo= driver.findElement(with(By.xpath("//*[@id=\"guide-icon\"]")).toRightOf(menuButton));
+        Assert.assertTrue(logo.isDisplayed());}
     //○ Search Box 'in erisilebilir oldugunu test edin (isEnabled())
+    @Test
+    public void test04(){
+        WebElement searchBox= driver.
+                findElement(By.xpath("//input[@id=\"search\"]"));
+        Assert.assertTrue(searchBox.isEnabled());}
+
     //○ wrongTitleTest => Sayfa basliginin “youtube” olmadigini dogrulayin
+    @Test
+    public void test05(){
+
+        Assert.assertNotEquals("youtube", driver.getTitle());}
 }
