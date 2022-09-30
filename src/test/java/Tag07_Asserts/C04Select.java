@@ -13,7 +13,7 @@ import org.openqa.selenium.support.ui.Select;
 
 import java.time.Duration;
 
-public class C04_TekrarTesti{
+public class C04Select {
     static WebDriver driver;
 
     @BeforeClass
@@ -25,8 +25,10 @@ public class C04_TekrarTesti{
     }
     @AfterClass
     public static void tearDown(){
-        driver.close();
+
+        // driver.close();
     }
+
     @Test
     public void test01(){
         //1. http://zero.webappsecurity.com/ Adresine gidin
@@ -95,11 +97,12 @@ public class C04_TekrarTesti{
 
     @Test
     public void test010(){
-        WebElement alertcontet= driver.findElement(By.id("alert_content"));
+
         String expectedData="Foreign currency cash was successfully purchased.";
-        String actuelData=alertcontet.getText();
+        String actuelData=driver.findElement(By.xpath("//*[@id=\"alert_content\"]")).getText();
         Assert.assertEquals(expectedData,actuelData);
         System.out.println(expectedData+"\n"+actuelData);
+        System.out.println("Test PASS");
     }
 
     }
