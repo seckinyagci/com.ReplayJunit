@@ -102,7 +102,7 @@ public class C04Select {
         String actuelData=driver.findElement(By.xpath("//*[@id=\"alert_content\"]")).getText();
         Assert.assertEquals(expectedData,actuelData);
         System.out.println(expectedData+"\n"+actuelData);
-        System.out.println("Test PASS");
+
     }
 
     }
