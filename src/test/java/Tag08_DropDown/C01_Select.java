@@ -11,6 +11,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
 import java.time.Duration;
+import java.util.ArrayList;
 
 public class C01_Select {
 
@@ -37,7 +38,7 @@ public class C01_Select {
     //1.Index kullanarak Seçenek 1’i (Option 1) seçin ve yazdırın
     //2.Value kullanarak Seçenek 2'yi (Option 2) seçin ve yazdırın
     @Test
-    public void test02() throws InterruptedException {
+    public void test02()  {
       WebElement dropdownMenu=driver.findElement(By.id("dropdown"));
       dropdownMenu.click();
       Select select=new Select(dropdownMenu);
@@ -45,12 +46,33 @@ public class C01_Select {
 
         select.selectByIndex(2);
 
-        Thread.sleep(5000);
+
 
     }
 
 
     //3.Visible Text(Görünen metin) kullanarak Seçenek 1’i (Option 1) seçin ve yazdırın
+    @Test
+    public void test03(){
+        WebElement dropdownMenu=driver.findElement(By.id("dropdown"));
+
+        Select select=new Select(dropdownMenu);
+        select.selectByIndex(1);
+        select.selectByIndex(2);
+        System.out.println( select.getFirstSelectedOption().getText());
+
+        for (int i = 0; i <select.getOptions().size() ; i++) {
+            System.out.println("for döngüsü = "+select.getOptions().get(i).getText());
+
+        }
+
+
+        if(select.getOptions().size()==4){
+            System.out.println("True");
+        }else {
+            System.out.println("False");
+        }
+    }
     //4.Tüm dropdown değerleri(value) yazdırın
     //5. Dropdown’un boyutunu bulun, Dropdown’da 4 öğe varsa konsolda True , degilse
     //False yazdırın
