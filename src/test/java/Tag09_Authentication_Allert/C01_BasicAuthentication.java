@@ -34,6 +34,7 @@ public class C01_BasicAuthentication {
     @Test
     public void test01() throws InterruptedException {
         driver.get("https://admin:admin@the-internet.herokuapp.com/basic_auth");
+        Thread.sleep(1000);
 
         String expectedData="Congratulations! You must have the proper credentials.";
         WebElement actuel= driver.findElement(By.xpath("//*[@id=\"content\"]/div/p"));
