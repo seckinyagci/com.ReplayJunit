@@ -72,6 +72,7 @@ public class C01_Select {
         }else {
             System.out.println("False");
         }
+        System.out.println("dropdownun boyutu: "+select.getOptions().size());
     }
     //4.Tüm dropdown değerleri(value) yazdırın
     //5. Dropdown’un boyutunu bulun, Dropdown’da 4 öğe varsa konsolda True , degilse
