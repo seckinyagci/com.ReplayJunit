@@ -39,14 +39,24 @@ public class C01_Iframe {
         //○ “An IFrame containing….” textinin erisilebilir oldugunu test edin ve konsolda yazdirin.
         driver.get("https://the-internet.herokuapp.com/iframe");
         WebElement baslikElementi=driver.findElement(By.xpath("//h3"));
-        Assert.assertTrue(baslikElementi.isEnabled());}
+        Assert.assertTrue(baslikElementi.isEnabled());
+        System.out.println(baslikElementi.getText());}
         @Test
         public void IframeTest02(){
         //○ Text Box’a “Merhaba Dunya!” yazin.
-            WebElement textKutusu=driver.findElement(By.xpath("//body[@id="tinymce"]"));
+       /*     WebElement textKutusu=driver.findElement(By.xpath("//body[@id='tinymce']"));
+              textKutusu.sendKeys("MerhabaDunya");
+              calismaz cunku ilk once iframe icine swichto ile girmek lazim
+              iframe icindeki web elementler aslinda baska bir sayfadadir
+        */
+            WebElement iframeElementi= driver.findElement(By.id("mce_0_ifr"));
 
+            driver.switchTo().frame(iframeElementi);
 
+            WebElement textKutusu=driver.findElement(By.xpath("//body[@id='tinymce']"));
+            textKutusu.sendKeys("MerhabaDunya");
 
 
     }
+
 }
