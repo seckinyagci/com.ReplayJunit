@@ -32,17 +32,16 @@ public class C01_Iframe {
     //● Bir metod olusturun: iframeTest
 
 
-    //○ TextBox’in altinda bulunan “Elemental Selenium” linkini textinin gorunur oldugunu
-    //dogrulayin ve konsolda yazdirin
+
     @Test
-    public void IframeTest010(){
+    public void IframeTest01(){
         //○ “An IFrame containing….” textinin erisilebilir oldugunu test edin ve konsolda yazdirin.
         driver.get("https://the-internet.herokuapp.com/iframe");
         WebElement baslikElementi=driver.findElement(By.xpath("//h3"));
         Assert.assertTrue(baslikElementi.isEnabled());
         System.out.println(baslikElementi.getText());}
         @Test
-        public void IframeTest02(){
+        public void IframeTest02() throws InterruptedException {
         //○ Text Box’a “Merhaba Dunya!” yazin.
        /*     WebElement textKutusu=driver.findElement(By.xpath("//body[@id='tinymce']"));
               textKutusu.sendKeys("MerhabaDunya");
@@ -54,7 +53,20 @@ public class C01_Iframe {
             driver.switchTo().frame(iframeElementi);
 
             WebElement textKutusu=driver.findElement(By.xpath("//body[@id='tinymce']"));
-            textKutusu.sendKeys("MerhabaDunya");
+            Thread.sleep(1000);
+            textKutusu.clear();
+            Thread.sleep(1000);
+            textKutusu.sendKeys("Merhaba Dunya");
+            Thread.sleep(2000);
+            //○ TextBox’in altinda bulunan “Elemental Selenium” linkini textinin gorunur oldugunu
+            //dogrulayin ve konsolda yazdirin
+            // iframeden cikmadan locate calismaz
+
+            driver.switchTo().defaultContent();
+            WebElement linkYazisi= driver.findElement(By.linkText("Elemental Selenium"));
+            Assert.assertTrue(linkYazisi.isDisplayed());
+            System.out.println(linkYazisi.getText());
+
 
 
     }
