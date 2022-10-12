@@ -20,6 +20,6 @@ public class TestBaseC {
     }
     @AfterClass
     public static void tearDown(){
-        driver.close();
+        driver.quit();
     }
 }
