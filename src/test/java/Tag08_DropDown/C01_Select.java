@@ -38,9 +38,10 @@ public class C01_Select {
     //1.Index kullanarak Seçenek 1’i (Option 1) seçin ve yazdırın
     //2.Value kullanarak Seçenek 2'yi (Option 2) seçin ve yazdırın
     @Test
-    public void test02()  {
+    public void test02() throws InterruptedException {
       WebElement dropdownMenu=driver.findElement(By.id("dropdown"));
       dropdownMenu.click();
+      Thread.sleep(15000);
       Select select=new Select(dropdownMenu);
       select.selectByIndex(1);
 
