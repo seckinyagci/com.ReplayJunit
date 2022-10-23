@@ -12,9 +12,13 @@ import java.util.List;
 
 public class C02_WebTables extends TestBaseC {
     @Test
-    public void login() {
+    public void login() throws InterruptedException {
         //● https://www.hotelmycamp.com admin/HotelRoomAdmin adresine gidin
         driver.get("https://www.hotelmycamp.com/admin/HotelRoomAdmin");
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("//button[@id='details-button']")).click();
+        driver.findElement(By.xpath("//a[@id='proceed-link']")).click();
+
         //○ Username : manager
         Actions actions = new Actions(driver);
 
@@ -36,6 +40,11 @@ public class C02_WebTables extends TestBaseC {
         List<WebElement> sutunBasliklari=driver.findElements(By.xpath("//thead//tr//th"));
 
         //○ Table’daki tum body’I ve başlıkları(headers) konsolda yazdırın.
+        WebElement tabloBody= driver.findElement(By.xpath("//table//tbody"));
+        WebElement tabloHead= driver.findElement(By.xpath("//table//thead//tr"));
+        System.out.println(tabloBody.getText());
+        System.out.println(tabloHead.getText());
+
         //● printRows( ) metodu oluşturun //tr
         //○ table body’sinde bulunan toplam satir(row) sayısını bulun.
         //○ Table body’sinde bulunan satirlari(rows) konsolda yazdırın.
