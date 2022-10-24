@@ -61,6 +61,7 @@ public class C02_WebTables extends TestBaseC {
         System.out.println("Tablodaki baslik sayisi = "+basliklar.size());
         //○ Table body’sinde bulunan satirlari(rows) konsolda yazdırın.
         System.out.println(tumBody.getText());
+
         //○ 4.satirdaki(row) elementleri konsolda yazdırın.
 
 
