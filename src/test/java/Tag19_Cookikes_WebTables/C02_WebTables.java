@@ -9,10 +9,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
 import java.util.List;
+import java.util.Set;
 
 public class C02_WebTables extends TestBaseC {
     @Test
-    public void login() throws InterruptedException {
+    public void test01() throws InterruptedException {
         //● https://www.hotelmycamp.com admin/HotelRoomAdmin adresine gidin
         driver.get("https://www.hotelmycamp.com/admin/HotelRoomAdmin");
         Thread.sleep(2000);
@@ -34,21 +35,35 @@ public class C02_WebTables extends TestBaseC {
         //○ Password : Manager1! ● table( ) metodu oluşturun
     }
     @Test
-    public void table() {
+    public void test02() throws InterruptedException {
 
         //○ Tüm table body’sinin boyutunu(sutun sayisi) bulun. /tbody
-        List<WebElement> sutunBasliklari=driver.findElements(By.xpath("//thead//tr//th"));
+        driver.findElement(By.xpath("//*[text()='User Management']")).click();
+        Thread.sleep(3000);
+        driver.findElement(By.xpath("(//i[@class='icon-calendar'])[1]")).click();
+
+        List<WebElement> sutunBasliklari = driver.findElements(By.xpath("//thead//tr//th"));
 
         //○ Table’daki tum body’I ve başlıkları(headers) konsolda yazdırın.
-        WebElement tabloBody= driver.findElement(By.xpath("//table//tbody"));
-        WebElement tabloHead= driver.findElement(By.xpath("//table//thead//tr"));
+        WebElement tabloBody = driver.findElement(By.xpath("//table//tbody"));
+        WebElement tabloHead = driver.findElement(By.xpath("//table//thead//tr"));
         System.out.println(tabloBody.getText());
         System.out.println(tabloHead.getText());
 
+    }
+    @Test
+    public void test03(){
         //● printRows( ) metodu oluşturun //tr
+
         //○ table body’sinde bulunan toplam satir(row) sayısını bulun.
+        List<WebElement> basliklar=driver.findElements(By.xpath("//table//thead//tr[1]/th"));
+        WebElement tumBody=driver.findElement(By.xpath("//tbody"));
+        System.out.println("Tablodaki baslik sayisi = "+basliklar.size());
         //○ Table body’sinde bulunan satirlari(rows) konsolda yazdırın.
+        System.out.println(tumBody.getText());
         //○ 4.satirdaki(row) elementleri konsolda yazdırın.
+
+
 
     }
 
