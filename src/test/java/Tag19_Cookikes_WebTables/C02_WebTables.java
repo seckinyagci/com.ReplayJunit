@@ -63,6 +63,8 @@ public class C02_WebTables extends TestBaseC {
         System.out.println(tumBody.getText());
 
         //○ 4.satirdaki(row) elementleri konsolda yazdırın.
+        System.out.println("4.satir\n");
+        System.out.println(driver.findElement(By.xpath("//tbody//tr[4]")).getText());
 
 
 
