@@ -3,6 +3,7 @@ package Tag20_Excel;
 import org.apache.poi.ss.usermodel.*;
 import org.junit.Assert;
 import org.junit.Test;
+import org.yaml.snakeyaml.scanner.Scanner;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -12,6 +13,8 @@ public class C02_ExcelSatirEkleme {
 
     @Test
     public void test01() throws IOException {
+        Scanner scan=new Scanner() {
+        }
         String pathExcel="src/resources/ulkeler.xlsx";
 
         FileInputStream fis=new FileInputStream(pathExcel);
@@ -27,6 +30,7 @@ public class C02_ExcelSatirEkleme {
                             .getRow(0)
                             .getCell(3)
                             .toString();
+
 
         Assert.assertEquals(expectedData,actuelData);
 
