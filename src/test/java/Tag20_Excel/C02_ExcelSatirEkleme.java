@@ -46,11 +46,5 @@ public class C02_ExcelSatirEkleme {
 
     }
 
-    private String showResult(String seiteNo,int rowIndex, int cellIndex) throws IOException {
-        String result;
-        FileInputStream fis=new FileInputStream("src/resources/ulkeler.xlsx");
-        Workbook workBook=WorkbookFactory.create(fis);
-       result= workBook.getSheet(seiteNo).getRow(rowIndex).getCell(cellIndex).toString();
 
-    return result; }
 }
