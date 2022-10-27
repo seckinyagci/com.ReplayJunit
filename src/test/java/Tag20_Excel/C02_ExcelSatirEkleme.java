@@ -15,7 +15,7 @@ public class C02_ExcelSatirEkleme {
 
 
     @Test
-    public void test01() throws IOException {
+    public void test01() throws IOException, InterruptedException {
 
         String pathExcel="src/resources/ulkeler.xlsx";
 
@@ -32,13 +32,25 @@ public class C02_ExcelSatirEkleme {
                             .getRow(0)
                             .getCell(3)
                             .toString();
-        System.out.println("lütfen ögrenmek istediginiz excel satirini giriniz");
-        String excelSatir= scan.next();
-        System.out.println("lütfen ögrenmek istediginiz sütunu giriniz");
-        String excelSutun=scan.next();
-
-
         Assert.assertEquals(expectedData,actuelData);
 
     }
+    @Test
+    public void test02() throws IOException {
+        String seiteNo="Sayfa1";
+        int rowIndex=3;
+        int cellIndex=2;
+        String expectedData="Cezayir";
+        String actuelData=showResult(seiteNo,rowIndex,cellIndex);
+        Assert.assertEquals(expectedData,actuelData);
+
+    }
+
+    private String showResult(String seiteNo,int rowIndex, int cellIndex) throws IOException {
+        String result;
+        FileInputStream fis=new FileInputStream("src/resources/ulkeler.xlsx");
+        Workbook workBook=WorkbookFactory.create(fis);
+       result= workBook.getSheet(seiteNo).getRow(rowIndex).getCell(cellIndex).toString();
+
+    return result; }
 }
