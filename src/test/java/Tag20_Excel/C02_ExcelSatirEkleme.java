@@ -1,17 +1,16 @@
 package Tag20_Excel;
 
-import org.apache.hc.core5.http.io.SessionOutputBuffer;
+
 import org.apache.poi.ss.usermodel.*;
 import org.junit.Assert;
 import org.junit.Test;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
+
 import java.io.IOException;
-import java.util.Scanner;
+
 
 public class C02_ExcelSatirEkleme {
-    java.util.Scanner scan = new Scanner(System.in);
 
 
     @Test
@@ -46,5 +45,11 @@ public class C02_ExcelSatirEkleme {
 
     }
 
+    private String showResult(String seiteNo,int rowIndex, int cellIndex) throws IOException {
+        String result;
+        FileInputStream fis=new FileInputStream("src/resources/ulkeler.xlsx");
+        Workbook workBook=WorkbookFactory.create(fis);
+       result= workBook.getSheet(seiteNo).getRow(rowIndex).getCell(cellIndex).toString();
 
+    return result; }
 }
