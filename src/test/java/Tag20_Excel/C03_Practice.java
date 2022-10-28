@@ -50,7 +50,8 @@ public class C03_Practice extends C04_BeforeAfter{
             System.out.println(key+ ": "+value);
 
         }
-
+//ülkeler listinde gana var mi
+        Assert.assertTrue(excelUlkeler.containsKey("Ghana"));
 
     }
 
