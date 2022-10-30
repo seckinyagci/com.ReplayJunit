@@ -1,7 +1,7 @@
 package Tag14_ActionClassKeyboard;
 
 
-import Tag11_WindowHandle_TestBase.utilities.TestBase;
+import utilities.TestBase;
 
 import org.junit.Assert;
 import org.junit.Test;

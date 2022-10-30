@@ -1,10 +1,9 @@
 package Tag15_FileExist;
 
-import Tag11_WindowHandle_TestBase.utilities.TestBase;
+import utilities.TestBase;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 
 public class C04_FileUpload extends TestBase {

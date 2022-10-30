@@ -1,7 +1,6 @@
 package Tag19_Cookikes_WebTables;
 
-import Tag11_WindowHandle_TestBase.utilities.TestBaseC;
-import org.bouncycastle.pqc.crypto.qtesla.QTeslaKeyEncodingTests;
+import utilities.TestBaseC;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -9,7 +8,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
 import java.util.List;
-import java.util.Set;
 
 public class C02_WebTables extends TestBaseC {
     @Test

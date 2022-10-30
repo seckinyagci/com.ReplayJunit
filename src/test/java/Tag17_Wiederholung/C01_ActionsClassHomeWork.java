@@ -1,14 +1,10 @@
 package Tag17_Wiederholung;
 
-import Tag11_WindowHandle_TestBase.utilities.TestBaseC;
-import org.apache.log4j.LogManager;
+import utilities.TestBaseC;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.Select;
-
-import java.util.logging.Logger;
 
 
 public class C01_ActionsClassHomeWork extends TestBaseC {

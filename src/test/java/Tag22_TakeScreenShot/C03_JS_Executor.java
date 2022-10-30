@@ -1,21 +1,20 @@
 package Tag22_TakeScreenShot;
 
-import Tag11_WindowHandle_TestBase.utilities.TestBaseC;
+import utilities.TestBaseC;
+import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
 
 public class C03_JS_Executor extends TestBaseC {
-    public static void main(String[] args) {
-        long n1 = 0, n2 = 1, sum = 0;
+    @Test
+    public void Test01() throws InterruptedException {
+        driver.get("https://www.amazon.com");
+        JavascriptExecutor jse= (JavascriptExecutor) driver;
+        WebElement signIn=driver.findElement(By.xpath("//*[@id=\"nav-link-accountList\"]"));
+        jse.executeScript("arguments[0].scrollIntoView(true);",signIn);
+        Thread.sleep(5000);
 
 
-        System.out.println(n1+" "+n2);
-        for (int i = 2; i < 100; i++) {
-            sum=n1+n2;
-
-            System.out.print(" "+sum);
-            n1=n2;
-            n2=sum;
-
-        }
     }
-
 }

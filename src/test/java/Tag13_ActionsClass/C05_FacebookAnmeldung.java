@@ -1,6 +1,6 @@
 package Tag13_ActionsClass;
 
-import Tag11_WindowHandle_TestBase.utilities.TestBase;
+import utilities.TestBase;
 import com.github.javafaker.Faker;
 import org.junit.Test;
 import org.openqa.selenium.By;

@@ -1,7 +1,7 @@
 package Tag12_TestBaseClass;
 
 import org.junit.Test;
-import Tag11_WindowHandle_TestBase.utilities.TestBase;
+import utilities.TestBase;
 
 public class C01_TestBaseFirstTest extends TestBase {
     @Test

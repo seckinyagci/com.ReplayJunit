@@ -1,6 +1,6 @@
 package Tag10_Iframe;
 
-import Tag11_WindowHandle_TestBase.utilities.TestBaseC;
+import utilities.TestBaseC;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;

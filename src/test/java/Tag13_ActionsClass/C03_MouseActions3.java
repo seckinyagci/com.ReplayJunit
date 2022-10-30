@@ -1,12 +1,11 @@
 package Tag13_ActionsClass;
 
-import Tag11_WindowHandle_TestBase.utilities.TestBaseC;
+import utilities.TestBaseC;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.interactions.SourceType;
 
 public class C03_MouseActions3 extends TestBaseC {
 

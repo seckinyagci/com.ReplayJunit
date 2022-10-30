@@ -1,6 +1,6 @@
 package Tag22_TakeScreenShot;
 
-import Tag11_WindowHandle_TestBase.utilities.TestBaseC;
+import utilities.TestBaseC;
 import org.apache.commons.io.FileUtils;
 import org.junit.Test;
 import org.openqa.selenium.*;
